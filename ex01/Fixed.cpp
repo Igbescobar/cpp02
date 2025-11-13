@@ -1,4 +1,5 @@
 #include "Fixed.hpp"
+#include <cmath>
 
 // Constructors
 Fixed::Fixed() : _value(0)
@@ -12,9 +13,10 @@ Fixed::Fixed(const int &value)
 	_value = value << _fractional_bits;
 }
 
-Fixed::Fixed(const float &value) : _value(value)
+Fixed::Fixed(const float &value)
 {
 	std::cout << "Float constructor called" << std::endl;
+	_value = roundf(value * (1 << _fractional_bits));
 }
 
 Fixed::Fixed(const Fixed &copy)
@@ -45,6 +47,13 @@ int Fixed::toInt(void) const
 	int result;
 	result = _value >> _fractional_bits;
 	return (result);
+}
+
+float Fixed::toFloat(void) const
+{
+	float value;
+	value = _value / (1 << _fractional_bits);
+	return (value);
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)

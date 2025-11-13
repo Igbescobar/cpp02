@@ -20,6 +20,7 @@ class Fixed
 	Fixed &operator=(const Fixed &assign);
 
 	int toInt(void) const;
+	float toFloat(void) const;
 
 	// Getters / Setters
 	int getRawBits() const;
