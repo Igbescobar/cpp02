@@ -37,7 +37,7 @@ Fixed &Fixed::operator=(const Fixed &assign)
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &assign)
 	{
-		this->_value = assign.getRawBits();
+		this->_value = assign._value;
 	}
 	return (*this);
 }
@@ -52,7 +52,7 @@ int Fixed::toInt(void) const
 float Fixed::toFloat(void) const
 {
 	float value;
-	value = _value / (1 << _fractional_bits);
+	value = (float)_value / (1 << _fractional_bits);
 	return (value);
 }
 
@@ -62,7 +62,6 @@ std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 	return (out);
 }
 
-// Getters / Setters
 int Fixed::getRawBits() const
 {
 	std::cout << "getRawBits member function called" << std::endl;
