@@ -6,11 +6,11 @@
 #    By: igngonza <igngonza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/12 15:13:55 by igngonza          #+#    #+#              #
-#    Updated: 2025/11/12 16:31:26 by igngonza         ###   ########.fr        #
+#    Updated: 2025/11/18 16:44:05 by igngonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= fixed2.0
+NAME= fixed3.0
 CXX= c++
 CXXFLAGS= -Wall -Wextra -Werror -std=c++98
 SRCS= main.cpp Fixed.cpp
